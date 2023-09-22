@@ -3832,6 +3832,13 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
                     throttled = True
 
             tbr = float_or_none(fmt.get('averageBitrate') or fmt.get('bitrate'), 1000)
+            bitrate = float_or_none(fmt.get('bitrate'), 1000)
+            
+            # custom code start
+            indexRange = fmt.get('indexRange')
+            initRange = fmt.get('initRange')
+            # custom code end
+            
             language_preference = (
                 10 if audio_track.get('audioIsDefault') and 10
                 else -10 if 'descriptive' in (audio_track.get('displayName') or '').lower() and -10
@@ -3849,6 +3856,9 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             name = fmt.get('qualityLabel') or quality.replace('audio_quality_', '') or ''
             fps = int_or_none(fmt.get('fps')) or 0
             dct = {
+                'bitrate': bitrate,
+                'indexRange': indexRange,
+                'initRange': initRange,
                 'asr': int_or_none(fmt.get('audioSampleRate')),
                 'filesize': int_or_none(fmt.get('contentLength')),
                 'format_id': f'{itag}{"-drc" if fmt.get("isDrc") else ""}',
@@ -3880,6 +3890,12 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             }
             mime_mobj = re.match(
                 r'((?:[^/]+)/(?:[^;]+))(?:;\s*codecs="([^"]+)")?', fmt.get('mimeType') or '')
+
+            # custom code start
+            dct['mimeType'] = mime_mobj.group(1)
+            dct['dashCodec'] = mime_mobj.group(2)
+            # custom code end
+            
             if mime_mobj:
                 dct['ext'] = mimetype2ext(mime_mobj.group(1))
                 dct.update(parse_codecs(mime_mobj.group(2)))
