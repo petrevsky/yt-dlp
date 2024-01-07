@@ -40,22 +40,9 @@ class CommitGroup(enum.Enum):
         return {
             name: group
             for group, names in {
-                cls.CORE: {
-                    'aes',
-                    'cache',
-                    'compat_utils',
-                    'compat',
-                    'cookies',
-                    'dependencies',
-                    'formats',
-                    'jsinterp',
-                    'outtmpl',
-                    'plugins',
-                    'update',
-                    'utils',
-                },
                 cls.MISC: {
                     'build',
+                    'ci',
                     'cleanup',
                     'devscripts',
                     'docs',
@@ -260,7 +247,7 @@ class CommitRange:
     AUTHOR_INDICATOR_RE = re.compile(r'Authored by:? ', re.IGNORECASE)
     MESSAGE_RE = re.compile(r'''
         (?:\[(?P<prefix>[^\]]+)\]\ )?
-        (?:(?P<sub_details>`?[^:`]+`?): )?
+        (?:(?P<sub_details>`?[\w.-]+`?): )?
         (?P<message>.+?)
         (?:\ \((?P<issues>\#\d+(?:,\ \#\d+)*)\))?
         ''', re.VERBOSE | re.DOTALL)
@@ -403,9 +390,9 @@ class CommitRange:
             if not group:
                 if self.EXTRACTOR_INDICATOR_RE.search(commit.short):
                     group = CommitGroup.EXTRACTOR
+                    logger.error(f'Assuming [ie] group for {commit.short!r}')
                 else:
-                    group = CommitGroup.POSTPROCESSOR
-                logger.warning(f'Failed to map {commit.short!r}, selected {group.name.lower()}')
+                    group = CommitGroup.CORE
 
             commit_info = CommitInfo(
                 details, sub_details, message.strip(),
