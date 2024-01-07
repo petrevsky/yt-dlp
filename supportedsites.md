@@ -161,8 +161,11 @@
  - **BiliBiliBangumi**
  - **BiliBiliBangumiMedia**
  - **BiliBiliBangumiSeason**
+<<<<<<< HEAD
  - **BilibiliCheese**
  - **BilibiliCheeseSeason**
+=======
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **BilibiliCollectionList**
  - **BilibiliFavoritesList**
  - **BiliBiliPlayer**
@@ -222,11 +225,20 @@
  - **CamModels**
  - **Camsoda**
  - **CamtasiaEmbed**
+<<<<<<< HEAD
+=======
+ - **CamWithHer**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **Canal1**
  - **CanalAlpha**
  - **canalc2.tv**
  - **Canalplus**: mycanal.fr and piwiplus.fr
  - **CaracolTvPlay**: [*caracoltv-play*](## "netrc machine")
+<<<<<<< HEAD
+=======
+ - **CarambaTV**
+ - **CarambaTVPage**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **CartoonNetwork**
  - **cbc.ca**
  - **cbc.ca:player**
@@ -398,8 +410,12 @@
  - **EMPFlix**
  - **Epicon**
  - **EpiconSeries**
+<<<<<<< HEAD
  - **EpidemicSound**
  - **eplus**: [*eplus*](## "netrc machine") e+ (イープラス)
+=======
+ - **eplus:inbound**: e+ (イープラス) overseas
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **Epoch**
  - **Eporner**
  - **Erocast**
@@ -717,7 +733,11 @@
  - **Lumni**
  - **lynda**: [*lynda*](## "netrc machine") lynda.com videos
  - **lynda:course**: [*lynda*](## "netrc machine") lynda.com online courses
+<<<<<<< HEAD
  - **maariv.co.il**
+=======
+ - **m6**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **MagellanTV**
  - **MagentaMusik360**
  - **mailru**: Видео@Mail.Ru
@@ -1078,6 +1098,10 @@
  - **Popcorntimes**
  - **PopcornTV**
  - **Pornbox**
+<<<<<<< HEAD
+=======
+ - **PornCom**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **PornerBros**
  - **PornFlip**
  - **PornHub**: [*pornhub*](## "netrc machine") PornHub and Thumbzilla
@@ -1353,6 +1377,10 @@
  - **StoryFireSeries**
  - **StoryFireUser**
  - **Streamable**
+<<<<<<< HEAD
+=======
+ - **streamcloud.eu**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **StreamCZ**
  - **StreamFF**
  - **StreetVoice**
@@ -1673,6 +1701,10 @@
  - **whowatch**
  - **Whyp**
  - **wikimedia.org**
+<<<<<<< HEAD
+=======
+ - **Willow**
+>>>>>>> ccd168ab0 (feat: added youtubeModified extractor)
  - **Wimbledon**
  - **WimTV**
  - **WinSportsVideo**
